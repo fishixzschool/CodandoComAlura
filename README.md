@@ -9,6 +9,4 @@ Este repositório foi criado para concentrar todos os projetos que desenvolvo du
 
 ## 📂 Projetos
 
-> *Obs.: atualize essa lista conforme for adicionando novos projetos.*
-
 - [Meu Portfólio](./Portfolio)
