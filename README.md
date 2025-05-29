@@ -11,6 +11,4 @@ Este repositório foi criado para concentrar todos os projetos que desenvolvo du
 
 > *Obs.: atualize essa lista conforme for adicionando novos projetos.*
 
-- [Projeto 1](./Projeto1)
-- [Projeto 2](./Projeto2)
-- [Projeto 3](./Projeto3)
+- [Meu Portfólio](./Portfolio)
