@@ -4,6 +4,7 @@
     --cor-principal: #6E859F;
     --cor-secundaria: #284260;
     --cor-destaque: #5DD499;
+    --cor-branco: #FFFFFF;
 }
 
 body {
@@ -22,7 +23,7 @@ h1, h2, h5 {
 }
 
 .btn-primary {
-    color: var(--cor-secundaria);
+    color: var(--cor-branco);
     font-weight: 700;
 }
 
