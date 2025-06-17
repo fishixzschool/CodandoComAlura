@@ -21,7 +21,7 @@ h1, h2, h5 {
     font-weight: 700;
 }
 
-.btn-primary {
+.btn, .btn-primary {
     color: var(--cor-destaque);
     font-weight: 700;
 }
