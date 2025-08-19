@@ -9,5 +9,8 @@ Este repositório foi criado para concentrar todos os projetos que desenvolvo du
 
 ## 📂 Projetos
 
-- [Meu Portfólio](./Portfolio)  
+- [Meu Portfólio Base](./Portfolio)  
 - [Visualizar projeto](https://fishixzschool.github.io/CodandoComAlura/Portfolio/)
+
+- [Meu Portfólio V2](./Portfoliov2)
+- [Meu Portfólio](https://fishixzschool.github.io/CodandoComAlura/Portfoliov2/)
