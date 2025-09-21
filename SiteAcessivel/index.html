@@ -7,539 +7,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+    <link rel="stylesheet" href="styles.css">
 
-    :root {
-        --laranja-claro: #FF862A;
-    }
-
-    body {
-        font-size: 1rem;
-        font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-    }
-
-    header {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-
-    .nav-img {
-        max-height: 60px;
-        width: auto;
-    }
-
-    .nav-link {
-        color: #CB6D43 !important;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        position: relative;
-        text-decoration: none;
-    }
-
-    .nav-link:hover {
-        color: var(--laranja-claro) !important;
-        transform: translateY(-2px);
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 50%;
-        background-color: var(--laranja-claro);
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-    }
-
-    .nav-link:hover::after {
-        width: 100%;
-    }
-
-    /* Menu Mobile */
-    .mobile-menu {
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .mobile-menu.show {
-        max-height: 300px;
-    }
-
-    .mobile-menu .nav-link {
-        display: block;
-        padding: 15px 20px;
-        font-size: 1.1rem;
-        border-bottom: 1px solid rgba(203, 109, 67, 0.1);
-    }
-
-    .mobile-menu .nav-link:last-child {
-        border-bottom: none;
-    }
-
-    #menu-toggle {
-        background: none;
-        border: none;
-        padding: 8px;
-        transition: transform 0.3s ease;
-    }
-
-    #menu-toggle:hover {
-        transform: scale(1.1);
-    }
-
-    #menu-toggle.active {
-        transform: rotate(90deg);
-    }
-
-    section {
-        padding: 5rem 0;
-        position: relative;
-    }
-
-    #inicio {
-        background: linear-gradient(135deg, rgba(255, 134, 42, 0.1) 0%, rgba(203, 109, 67, 0.1) 100%);
-        border-radius: 30px;
-        margin: 2rem 0;
-        overflow: hidden;
-    }
-
-    .display-4 {
-        text-shadow: -3px 3px 0 var(--laranja-claro);
-        color: #fff;
-        font-weight: bold;
-        margin-bottom: 2rem;
-    }
-
-    .btn-primary {
-        background: linear-gradient(45deg, var(--laranja-claro), #CB6D43);
-        border: none;
-        border-radius: 25px;
-        padding: 12px 30px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(255, 134, 42, 0.3);
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(255, 134, 42, 0.4);
-        background: linear-gradient(45deg, #CB6D43, var(--laranja-claro));
-    }
-
-    #tropicalia {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 20px;
-        margin: 3rem 0;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-        font-family: 'Lemon', serif;
-        font-size: 2.5em;
-        color: var(--laranja-claro);
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    #galeria {
-        background: rgba(250, 244, 244, 0.9);
-        border-radius: 20px;
-        margin: 3rem 0;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .gallery-img {
-        transition: all 0.3s ease;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .gallery-img:hover {
-        transform: scale(1.05) rotate(2deg);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    #contato {
-        background: linear-gradient(135deg, rgba(203, 109, 67, 0.9) 0%, rgba(255, 134, 42, 0.9) 100%);
-        border-radius: 20px;
-        margin: 3rem 0;
-        color: white;
-    }
-
-    .formulario {
-        background: rgba(255, 255, 255, 0.95);
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(10px);
-        color: #333;
-    }
-
-    .form-control {
-        background-color: #F1EDEF;
-        border: 2px solid transparent;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-    }
-
-    .form-control:focus {
-        background-color: #fff;
-        border-color: var(--laranja-claro);
-        box-shadow: 0 0 0 0.2rem rgba(255, 134, 42, 0.25);
-    }
-
-    footer {
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        margin-top: 3rem;
-        border-radius: 20px 20px 0 0;
-    }
-
-    footer i {
-        font-size: 1.5rem;
-        margin: 0 10px;
-        color: var(--laranja-claro);
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-
-    footer i:hover {
-        transform: scale(1.2);
-        color: #CB6D43;
-    }
-
-    /* Sistema de Acessibilidade */
-    #acessibilidade {
-        position: fixed;
-        top: 2rem;
-        right: 20px;
-        z-index: 1000;
-    }
-
-    #botao-acessibilidade {
-        background: linear-gradient(45deg, var(--laranja-claro), #CB6D43);
-        border: none;
-        border-radius: 50px;
-        padding: 10px 20px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(255, 134, 42, 0.3);
-    }
-
-    #botao-acessibilidade:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(255, 134, 42, 0.4);
-    }
-
-    .rotacao-botao {
-        transform: rotate(-90deg) !important;
-        transform-origin: right center;
-    }
-
-    #opcoes-acessibilidade {
-        margin-top: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    #opcoes-acessibilidade button {
-        background: linear-gradient(45deg, #4CAF50, #45a049);
-        border: none;
-        border-radius: 25px;
-        padding: 8px 16px;
-        color: white;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
-    }
-
-    #opcoes-acessibilidade button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-    }
-
-    .apresenta-lista {
-        display: flex !important;
-    }
-
-    /* Responsividade Completa */
-    @media (max-width: 1200px) {
-        .container {
-            padding: 0 2rem;
-        }
-        
-        .display-4 {
-            font-size: 2.5rem;
-        }
-    }
-
-    @media (max-width: 992px) {
-        .nav {
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .display-4 {
-            font-size: 2.2rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        section {
-            padding: 4rem 0;
-        }
-        
-        .row {
-            margin: 0;
-        }
-        
-        .col-lg-6, .col-lg-8, .col-lg-4 {
-            margin-bottom: 2rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        body {
-            font-size: 0.9rem;
-        }
-        
-        header {
-            padding: 1rem 0;
-        }
-        
-        .nav {
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .nav li {
-            margin: 0.2rem 0;
-        }
-        
-        #acessibilidade {
-            top: 0.5rem;
-            right: 0.5rem;
-        }
-        
-        #botao-acessibilidade {
-            padding: 8px 12px;
-            font-size: 0.8rem;
-        }
-        
-        #opcoes-acessibilidade button {
-            padding: 6px 12px;
-            font-size: 0.75rem;
-        }
-        
-        .display-4 {
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        h2 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        section {
-            padding: 2rem 0;
-        }
-        
-        #inicio, #tropicalia, #galeria, #contato {
-            margin: 1rem 0;
-            padding: 2rem 1rem;
-        }
-        
-        .row {
-            flex-direction: column;
-        }
-        
-        .col-md-4, .col-md-5, .col-md-6, .col-lg-4, .col-lg-6, .col-lg-8 {
-            width: 100%;
-            margin-bottom: 1.5rem;
-        }
-        
-        .gallery-img {
-            max-height: 250px;
-        }
-        
-        .formulario {
-            padding: 1.5rem;
-        }
-        
-        .btn-lg {
-            padding: 10px 20px;
-            font-size: 1rem;
-        }
-        
-        footer {
-            padding: 2rem 1rem;
-        }
-        
-        footer i {
-            font-size: 1.2rem;
-            margin: 0 8px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        body {
-            font-size: 0.85rem;
-        }
-        
-        .container {
-            padding: 0 1rem;
-        }
-        
-        .nav-img {
-            max-height: 40px;
-        }
-        
-        .display-4 {
-            font-size: 1.5rem;
-        }
-        
-        h2 {
-            font-size: 1.4rem;
-        }
-        
-        section {
-            padding: 1.5rem 0;
-        }
-        
-        #inicio, #tropicalia, #galeria, #contato {
-            padding: 1.5rem 0.5rem;
-            margin: 0.5rem 0;
-        }
-        
-        .gallery-img {
-            max-height: 200px;
-        }
-        
-        .formulario {
-            padding: 1rem;
-        }
-        
-        .btn {
-            padding: 8px 16px;
-            font-size: 0.9rem;
-        }
-        
-        .btn-lg {
-            padding: 10px 18px;
-            font-size: 0.95rem;
-        }
-        
-        #acessibilidade {
-            top: 0.3rem;
-            right: 0.3rem;
-        }
-        
-        #botao-acessibilidade {
-            padding: 6px 10px;
-            font-size: 0.7rem;
-        }
-        
-        #opcoes-acessibilidade button {
-            padding: 5px 10px;
-            font-size: 0.7rem;
-        }
-    }
-
-    /* Orientação landscape em dispositivos móveis */
-    @media (max-width: 768px) and (orientation: landscape) {
-        .display-4 {
-            font-size: 1.6rem;
-        }
-        
-        section {
-            padding: 1rem 0;
-        }
-        
-        #acessibilidade {
-            top: 0.2rem;
-            right: 0.2rem;
-        }
-    }
-
-    /* Melhorias para toque em dispositivos móveis */
-    @media (hover: none) and (pointer: coarse) {
-        .btn, .nav-link, footer i, #botao-acessibilidade, #opcoes-acessibilidade button {
-            min-height: 44px;
-            min-width: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .nav-link {
-            padding: 12px 16px;
-        }
-        
-        .gallery-img:hover {
-            transform: none;
-        }
-        
-        .gallery-img:active {
-            transform: scale(0.98);
-        }
-    }
-
-    /* Animações suaves */
-    * {
-        transition: all 0.3s ease;
-    }
-
-    .img-fluid {
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-  </style>
 </head>
 <body>
   <header class="p-3">
     <nav class="container d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center">
-        <svg width="60" height="60" viewBox="0 0 100 100" class="nav-img">
-          <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="#CB6D43" stroke-width="3"/>
-          <text x="50" y="58" text-anchor="middle" fill="white" font-family="Lemon" font-size="20" font-weight="bold">LOGO</text>
-          <defs>
-            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#FF862A"/>
-              <stop offset="100%" style="stop-color:#CB6D43"/>
-            </linearGradient>
-          </defs>
-        </svg>
+        <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivel/img/logonowunited.png" 
+             alt="Logo Now United" 
+             class="nav-img"
+             onerror="this.src=''; this.alt='Logo não pôde ser carregada'; this.style.display='none';"
+             style="border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);"
+        >
       </div>
       
-      <!-- Menu Desktop -->
+
       <ul class="nav d-none d-md-flex list-unstyled mb-0">
         <li class="mx-3"><a class="nav-link" href="#inicio">INÍCIO</a></li>
         <li class="mx-3"><a class="nav-link" href="#galeria">GALERIA</a></li>
         <li class="mx-3"><a class="nav-link" href="#contato">CONTATO</a></li>
       </ul>
       
-      <!-- Botão Menu Mobile -->
+
       <button class="btn d-md-none" id="menu-toggle" aria-label="Abrir menu de navegação">
         <svg width="30" height="30" viewBox="0 0 30 30">
           <rect x="3" y="6" width="24" height="3" fill="#CB6D43" rx="1.5"/>
@@ -549,7 +39,7 @@
       </button>
     </nav>
     
-    <!-- Menu Mobile -->
+
     <div class="mobile-menu d-md-none" id="mobile-menu">
       <ul class="list-unstyled text-center py-3">
         <li class="py-2"><a class="nav-link" href="#inicio">INÍCIO</a></li>
@@ -559,7 +49,7 @@
     </div>
   </header>
 
-  <!-- Sistema de Acessibilidade -->
+
   <div id="acessibilidade">
     <button id="botao-acessibilidade" class="btn btn-primary fw-bold" aria-label="Menu de acessibilidade">
       ♿ ACESSIBILIDADE
@@ -580,65 +70,34 @@
         <div class="col-lg-6">
           <h1 class="display-4 fst-italic fw-bold">BEM-VINDOS AO NOSSO MUNDO</h1>
           <div class="mb-4">
-            <svg width="300" height="150" viewBox="0 0 300 150">
-              <rect width="300" height="150" fill="url(#bgGradient)" rx="15"/>
-              <text x="150" y="80" text-anchor="middle" fill="white" font-family="Lemon" font-size="24" font-weight="bold">NOW UNITED</text>
-              <defs>
-                <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#FF862A"/>
-                  <stop offset="100%" style="stop-color:#CB6D43"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <div class="position-relative" style="max-width: 400px;">
+              <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivel/img/Screenshot_20250921_034439_Instagram.jpg" 
+                   alt="Fundo Now United" 
+                   class="img-fluid rounded-3 shadow-lg"
+                   style="width: 100%; height: 150px; object-fit: cover;"
+                   onerror="this.src=''; this.alt='Imagem de fundo não pôde ser carregada'; this.style.display='none';"
+              >
+            </div>
           </div>
-          <a href="#tropicalia" class="btn btn-primary btn-lg fw-semibold">DESCOBRIR MAIS</a>
+          <a href="#sobre" class="btn btn-primary btn-lg fw-semibold">DESCOBRIR MAIS</a>
         </div>
-        <div class="col-lg-6 text-center">
-          <svg width="400" height="300" viewBox="0 0 400 300" class="img-fluid">
-            <rect width="400" height="300" fill="url(#groupGradient)" rx="20"/>
-            <circle cx="120" cy="120" r="30" fill="#FFE4B5"/>
-            <circle cx="200" cy="100" r="35" fill="#DEB887"/>
-            <circle cx="280" cy="130" r="32" fill="#F4A460"/>
-            <circle cx="160" cy="180" r="28" fill="#CD853F"/>
-            <circle cx="240" cy="200" r="30" fill="#D2691E"/>
-            <text x="200" y="250" text-anchor="middle" fill="white" font-family="Montserrat" font-size="16" font-weight="bold">GRUPO MUSICAL</text>
-            <defs>
-              <linearGradient id="groupGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#667eea"/>
-                <stop offset="100%" style="stop-color:#764ba2"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
+
       </div>
     </section>
 
-    <section id="tropicalia" class="my-5 p-5">
-      <div class="row align-items-center">
-        <div class="col-lg-4 text-center mb-4">
-          <svg width="273" height="331" viewBox="0 0 273 331" class="rounded-pill">
-            <ellipse cx="136.5" cy="165.5" rx="136.5" ry="165.5" fill="url(#tropicalGradient)"/>
-            <circle cx="136.5" cy="120" r="40" fill="#FFE4B5"/>
-            <rect x="96.5" y="180" width="80" height="100" fill="#FF862A" rx="10"/>
-            <text x="136.5" y="290" text-anchor="middle" fill="white" font-family="Montserrat" font-size="14" font-weight="bold">TROPICÁLIA</text>
-            <defs>
-              <linearGradient id="tropicalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#FF862A"/>
-                <stop offset="100%" style="stop-color:#CB6D43"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="col-lg-8">
-          <h2>MOVIMENTO TROPICÁLIA</h2>
+    <section id="sobre" class="my-5 p-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2>SOBRE O NOW UNITED</h2>
           <p class="lead">
-            O Tropicalismo foi um movimento cultural brasileiro que revolucionou a música, as artes e a cultura nos anos 60. 
-            Misturando elementos tradicionais brasileiros com influências internacionais, criou uma nova linguagem artística 
-            que influencia até hoje a cultura nacional e internacional.
+            Now United é um grupo musical global formado por jovens talentos de diferentes países ao redor do mundo. 
+            Criado em 2017, o grupo representa a diversidade cultural e musical, unindo diferentes nacionalidades 
+            em uma única formação artística que celebra a união através da música.
           </p>
           <p>
-            Nosso grupo se inspira nessa rica tradição cultural para criar uma experiência musical única, 
-            conectando gerações através da arte e da música.
+            Com membros do Brasil, Estados Unidos, Coreia do Sul, Filipinas, Reino Unido, Alemanha, México, Índia e outros países, 
+            o Now United quebra barreiras culturais e linguísticas, criando uma experiência musical verdadeiramente internacional 
+            que conecta fãs de todas as idades ao redor do globo.
           </p>
         </div>
       </div>
@@ -649,58 +108,38 @@
       <div class="container">
         <div class="row justify-content-center g-4">
           <div class="col-md-5">
-            <svg width="100%" height="300" viewBox="0 0 400 300" class="gallery-img">
-              <rect width="400" height="300" fill="url(#img1Gradient)" rx="15"/>
-              <circle cx="200" cy="150" r="80" fill="rgba(255,255,255,0.3)"/>
-              <text x="200" y="160" text-anchor="middle" fill="white" font-family="Montserrat" font-size="18" font-weight="bold">PERFORMANCE 1</text>
-              <defs>
-                <linearGradient id="img1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#FF6B6B"/>
-                  <stop offset="100%" style="stop-color:#4ECDC4"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivel/img/Screenshot_20250921_032757_Instagram.jpg" 
+                 alt="Now United - Foto do Instagram 1" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
           </div>
           <div class="col-md-5">
-            <svg width="100%" height="300" viewBox="0 0 400 300" class="gallery-img">
-              <rect width="400" height="300" fill="url(#img2Gradient)" rx="15"/>
-              <circle cx="200" cy="150" r="80" fill="rgba(255,255,255,0.3)"/>
-              <text x="200" y="160" text-anchor="middle" fill="white" font-family="Montserrat" font-size="18" font-weight="bold">PERFORMANCE 2</text>
-              <defs>
-                <linearGradient id="img2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#A8E6CF"/>
-                  <stop offset="100%" style="stop-color:#FFD93D"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivel/img/Screenshot_20250921_032533_Instagram.jpg" 
+                 alt="Now United - Foto do Instagram 2" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
           </div>
         </div>
         <div class="row mt-4 justify-content-center g-4">
           <div class="col-md-5">
-            <svg width="100%" height="300" viewBox="0 0 400 300" class="gallery-img">
-              <rect width="400" height="300" fill="url(#img3Gradient)" rx="15"/>
-              <circle cx="200" cy="150" r="80" fill="rgba(255,255,255,0.3)"/>
-              <text x="200" y="160" text-anchor="middle" fill="white" font-family="Montserrat" font-size="18" font-weight="bold">PERFORMANCE 3</text>
-              <defs>
-                <linearGradient id="img3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#FF8A80"/>
-                  <stop offset="100%" style="stop-color:#EA80FC"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivel/img/Screenshot_20250921_032506_Instagram.jpg" 
+                 alt="Now United - Foto do Instagram 3" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
           </div>
           <div class="col-md-5">
-            <svg width="100%" height="300" viewBox="0 0 400 300" class="gallery-img">
-              <rect width="400" height="300" fill="url(#img4Gradient)" rx="15"/>
-              <circle cx="200" cy="150" r="80" fill="rgba(255,255,255,0.3)"/>
-              <text x="200" y="160" text-anchor="middle" fill="white" font-family="Montserrat" font-size="18" font-weight="bold">PERFORMANCE 4</text>
-              <defs>
-                <linearGradient id="img4Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#81C784"/>
-                  <stop offset="100%" style="stop-color:#64B5F6"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivel/img/Screenshot_20250921_032447_Instagram.jpg" 
+                 alt="Now United - Foto do Instagram 4" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
           </div>
         </div>
       </div>
@@ -763,201 +202,10 @@
       <i class="bi bi-instagram" role="button" tabindex="0" aria-label="Instagram" title="Siga-nos no Instagram"></i>
       <i class="bi bi-tiktok" role="button" tabindex="0" aria-label="TikTok" title="Veja nossos vídeos no TikTok"></i>
     </div>
-    <p class="mt-3 mb-0">© 2024 - Todos os direitos reservados</p>
+    <p class="mt-3 mb-0">© 2099 - Site criado para fins educacionais com a ajuda da <strong>ALURA</strong></p>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Sistema de Acessibilidade
-        const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
-        const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
+  <script src="script.js"></script>
 
-        botaoDeAcessibilidade.addEventListener('click', function () {
-            botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-            opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
-            
-            // Atualiza aria-expanded para acessibilidade
-            const isExpanded = opcoesDeAcessibilidade.classList.contains('apresenta-lista');
-            botaoDeAcessibilidade.setAttribute('aria-expanded', isExpanded);
-        });
-
-        const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-        const diminuiFonteBotao = document.getElementById('diminuir-fonte');
-
-        let tamanhoAtualFonte = 1;
-
-        aumentaFonteBotao.addEventListener('click', function () {
-            if (tamanhoAtualFonte < 1.5) { // Limite máximo
-                tamanhoAtualFonte += 0.1;
-                
-                // Aplica o tamanho da fonte em todos os elementos de texto
-                document.documentElement.style.setProperty('--font-scale', tamanhoAtualFonte);
-                document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
-                
-                // Atualiza elementos específicos
-                document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, label').forEach(el => {
-                    const currentSize = window.getComputedStyle(el).fontSize;
-                    const newSize = parseFloat(currentSize) * (tamanhoAtualFonte / (tamanhoAtualFonte - 0.1));
-                    el.style.fontSize = `${newSize}px`;
-                });
-                
-                // Feedback para usuários de leitores de tela
-                const feedback = document.createElement('div');
-                feedback.setAttribute('aria-live', 'polite');
-                feedback.textContent = `Fonte aumentada para ${Math.round(tamanhoAtualFonte * 100)}%`;
-                feedback.style.position = 'absolute';
-                feedback.style.left = '-9999px';
-                document.body.appendChild(feedback);
-                setTimeout(() => document.body.removeChild(feedback), 1000);
-            }
-        });
-
-        diminuiFonteBotao.addEventListener('click', function () {
-            if (tamanhoAtualFonte > 0.8) { // Limite mínimo
-                tamanhoAtualFonte -= 0.1;
-                
-                // Aplica o tamanho da fonte em todos os elementos de texto
-                document.documentElement.style.setProperty('--font-scale', tamanhoAtualFonte);
-                document.body.style.fontSize = `${tamanhoAtualFonte}rem`;
-                
-                // Atualiza elementos específicos
-                document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, label').forEach(el => {
-                    const currentSize = window.getComputedStyle(el).fontSize;
-                    const newSize = parseFloat(currentSize) * (tamanhoAtualFonte / (tamanhoAtualFonte + 0.1));
-                    el.style.fontSize = `${newSize}px`;
-                });
-                
-                // Feedback para usuários de leitores de tela
-                const feedback = document.createElement('div');
-                feedback.setAttribute('aria-live', 'polite');
-                feedback.textContent = `Fonte diminuída para ${Math.round(tamanhoAtualFonte * 100)}%`;
-                feedback.style.position = 'absolute';
-                feedback.style.left = '-9999px';
-                document.body.appendChild(feedback);
-                setTimeout(() => document.body.removeChild(feedback), 1000);
-            }
-        });
-
-        // Menu Mobile
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('show');
-            menuToggle.classList.toggle('active');
-            
-            // Atualiza aria-expanded para acessibilidade
-            const isExpanded = mobileMenu.classList.contains('show');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-            menuToggle.setAttribute('aria-label', isExpanded ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
-        });
-
-        // Fecha menu mobile ao clicar em um link
-        document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('show');
-                menuToggle.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
-            });
-        });
-
-        // Fecha menu mobile ao clicar fora dele
-        document.addEventListener('click', function(e) {
-            if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.remove('show');
-                menuToggle.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
-            }
-        });
-
-        // Navegação suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Formulário de contato
-        const formContato = document.getElementById('form-contato');
-        formContato.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Coleta os dados do formulário
-            const formData = new FormData(this);
-            const dados = Object.fromEntries(formData);
-            
-            // Simula envio (em produção, aqui seria feita a requisição para o servidor)
-            const botaoEnviar = this.querySelector('button[type="submit"]');
-            const textoOriginal = botaoEnviar.innerHTML;
-            
-            botaoEnviar.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>ENVIANDO...';
-            botaoEnviar.disabled = true;
-            
-            setTimeout(() => {
-                // Simula sucesso no envio
-                botaoEnviar.innerHTML = '<i class="bi bi-check-circle me-2"></i>ENVIADO!';
-                botaoEnviar.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
-                
-                // Feedback de sucesso
-                const sucessoMsg = document.createElement('div');
-                sucessoMsg.className = 'alert alert-success mt-3';
-                sucessoMsg.innerHTML = '<i class="bi bi-check-circle me-2"></i>Mensagem enviada com sucesso! Entraremos em contato em breve.';
-                sucessoMsg.setAttribute('role', 'alert');
-                this.appendChild(sucessoMsg);
-                
-                // Reset do formulário
-                this.reset();
-                
-                setTimeout(() => {
-                    botaoEnviar.innerHTML = textoOriginal;
-                    botaoEnviar.disabled = false;
-                    botaoEnviar.style.background = '';
-                    if (sucessoMsg.parentNode) {
-                        sucessoMsg.parentNode.removeChild(sucessoMsg);
-                    }
-                }, 3000);
-            }, 2000);
-        });
-
-        // Interações das redes sociais
-        document.querySelectorAll('footer i[role="button"]').forEach(icon => {
-            icon.addEventListener('click', function() {
-                const social = this.className.includes('whatsapp') ? 'WhatsApp' : 
-                              this.className.includes('instagram') ? 'Instagram' : 'TikTok';
-                
-                // Em produção, aqui abriria os links reais das redes sociais
-                alert(`Redirecionando para ${social}...`);
-            });
-            
-            // Suporte para navegação por teclado
-            icon.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
-        });
-
-        // Efeitos de hover para melhor feedback visual
-        document.querySelectorAll('.gallery-img').forEach(img => {
-            img.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05) rotate(2deg)';
-            });
-            
-            img.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            });
-        });
-    });
-  </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98275e3b651cf204',t:'MTc1ODQzNDY5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'982789605576f1bb',t:'MTc1ODQzNjQ2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
