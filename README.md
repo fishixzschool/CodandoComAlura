@@ -21,5 +21,3 @@ Este repositório foi criado para concentrar todos os projetos que desenvolvo du
 
 - [Site com Sitema de Acessibilidade](./SiteAcessivel)
 - [Visualizar projeto](https://fishixzschool.github.io/CodandoComAlura/SiteAcessivel/)
-
-- 
