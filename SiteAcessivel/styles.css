@@ -211,23 +211,12 @@
         color: #CB6D43;
     }
 
+    /* Sistema de Acessibilidade */
     #acessibilidade {
         position: fixed;
         top: 2rem;
         right: 20px;
         z-index: 1000;
-        cursor: move;
-        user-select: none;
-        transition: none;
-    }
-
-    #acessibilidade.dragging {
-        transition: none;
-        pointer-events: none;
-    }
-
-    #acessibilidade.dragging * {
-        pointer-events: none;
     }
 
     #botao-acessibilidade {
