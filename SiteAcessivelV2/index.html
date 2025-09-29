@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PEPPA PIG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header class="p-3">
+    <nav class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivelV2/img/logopeppapig.png" 
+             alt="Logo Peppa Pig" 
+             class="nav-img"
+             onerror="this.src=''; this.alt='Logo não pôde ser carregada'; this.style.display='none';"
+             style="border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);"
+        >
+      </div>
+      
+
+      <ul class="nav d-none d-md-flex list-unstyled mb-0">
+        <li class="mx-3"><a class="nav-link" href="#inicio">INÍCIO</a></li>
+        <li class="mx-3"><a class="nav-link" href="#galeria">GALERIA</a></li>
+        <li class="mx-3"><a class="nav-link" href="#contato">CONTATO</a></li>
+      </ul>
+      
+
+      <button class="btn d-md-none" id="menu-toggle" aria-label="Abrir menu de navegação">
+        <svg width="30" height="30" viewBox="0 0 30 30">
+          <rect x="3" y="6" width="24" height="3" fill="#CB6D43" rx="1.5"/>
+          <rect x="3" y="13.5" width="24" height="3" fill="#CB6D43" rx="1.5"/>
+          <rect x="3" y="21" width="24" height="3" fill="#CB6D43" rx="1.5"/>
+        </svg>
+      </button>
+    </nav>
+    
+
+    <div class="mobile-menu d-md-none" id="mobile-menu">
+      <ul class="list-unstyled text-center py-3">
+        <li class="py-2"><a class="nav-link" href="#inicio">INÍCIO</a></li>
+        <li class="py-2"><a class="nav-link" href="#galeria">GALERIA</a></li>
+        <li class="py-2"><a class="nav-link" href="#contato">CONTATO</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <div id="acessibilidade">
+    <button id="botao-acessibilidade" class="btn btn-primary fw-bold" aria-label="Menu de acessibilidade">
+      ♿ ACESSIBILIDADE
+    </button>
+    <div id="opcoes-acessibilidade" class="d-none" role="menu" aria-label="Opções de acessibilidade">
+      <button id="aumentar-fonte" class="btn fw-bold" role="menuitem" aria-label="Aumentar tamanho da fonte">
+        🔍+ AUMENTAR FONTE
+      </button>
+      <button id="diminuir-fonte" class="btn fw-bold" role="menuitem" aria-label="Diminuir tamanho da fonte">
+        🔍- DIMINUIR FONTE
+      </button>
+    </div>
+  </div>
+
+  <main class="container my-5">
+    <section id="inicio" class="my-5 p-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4 fst-italic fw-bold">OLA EU SOU A PEPPA</h1>
+          <div class="mb-4">
+            <div class="position-relative" style="max-width: 400px;">
+              <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivelV2/img/bannerpeppa.jpeg" 
+                   alt="Fundo Now United" 
+                   class="img-fluid rounded-3 shadow-lg"
+                   style="width: 100%; height: 150px; object-fit: cover;"
+                   onerror="this.src=''; this.alt='Imagem de fundo não pôde ser carregada'; this.style.display='none';"
+              >
+            </div>
+          </div>
+          <a href="#sobre" class="btn btn-primary btn-lg fw-semibold">DESCOBRIR MAIS</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="sobre" class="my-5 p-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2>SOBRE A PEPPA PIG</h2>
+          <p class="lead">
+            Peppa Pig é uma série de animação britânica voltada para o público infantil, criada por Neville Astley e Mark Baker. 
+            Estreada em 2004, a série é centrada na vida de Peppa, uma porquinha que vive com sua família e amigos, explorando temas como amizade, família e aventuras cotidianas. 
+            Com personagens carismáticos, como George (seu irmão), Mamãe Pig e Papai Pig, Peppa Pig encanta crianças de várias partes do mundo, promovendo valores como a importância da imaginação e a curiosidade. 
+          </p>
+          <p>
+            A série é dublada em diversas línguas, alcançando um público global e se tornando um fenômeno cultural que vai além da televisão, com produtos licenciados, livros e até peças teatrais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="p-5">
+      <h2 class="text-center mb-5">NOSSA GALERIA</h2>
+      <div class="container">
+        <div class="row justify-content-center g-4">
+          <div class="col-md-5">
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivelV2/img/foto1.jpeg" 
+                 alt="Foto Peppa PIg - Imagem 1" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
+          </div>
+          <div class="col-md-5">
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivelV2/img/foto2.jpeg" 
+                 alt="Foto Peppa PIg - Imagem 2" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
+          </div>
+        </div>
+        <div class="row mt-4 justify-content-center g-4">
+          <div class="col-md-5">
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivelV2/img/foto3.jpeg" 
+                 alt="Foto Peppa PIg - Imagem 3" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
+          </div>
+          <div class="col-md-5">
+            <img src="https://raw.githubusercontent.com/fishixzschool/CodandoComAlura/refs/heads/main/SiteAcessivelV2/img/foto4.jpeg" 
+                 alt="Foto Peppa PIg - Imagem 4" 
+                 class="img-fluid gallery-img"
+                 style="width: 100%; height: 300px; object-fit: cover;"
+                 onerror="this.src=''; this.alt='Foto não pôde ser carregada'; this.style.display='none';"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="p-5">
+      <div class="container">
+        <h2 class="text-center mb-5 text-white">ENTRE EM CONTATO</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <form class="formulario" id="form-contato">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="nome" class="form-label">Nome Completo</label>
+                  <input type="text" class="form-control" id="nome" name="nome" required aria-describedby="nomeHelp">
+                  <div id="nomeHelp" class="form-text">Digite seu nome completo.</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="email" name="email" required aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">Seu e-mail não será compartilhado.</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone" aria-describedby="telefoneHelp">
+                <div id="telefoneHelp" class="form-text">Opcional. Formato: (11) 99999-9999</div>
+              </div>
+              <div class="mb-3">
+                <label for="assunto" class="form-label">Assunto</label>
+                <select class="form-control" id="assunto" name="assunto" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="show">Contratação para Show</option>
+                  <option value="parceria">Parceria</option>
+                  <option value="imprensa">Imprensa</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="mensagem" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required aria-describedby="mensagemHelp"></textarea>
+                <div id="mensagemHelp" class="form-text">Descreva sua solicitação ou dúvida.</div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg px-5">
+                  <i class="bi bi-send me-2"></i>ENVIAR MENSAGEM
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center p-4">
+    <p class="fst-italic mb-3">Conecte-se conosco nas redes sociais</p>
+    <div class="mb-3">
+      <i class="bi bi-whatsapp" role="button" tabindex="0" aria-label="WhatsApp" title="Entre em contato via WhatsApp"></i>
+      <i class="bi bi-instagram" role="button" tabindex="0" aria-label="Instagram" title="Siga-nos no Instagram"></i>
+      <i class="bi bi-tiktok" role="button" tabindex="0" aria-label="TikTok" title="Veja nossos vídeos no TikTok"></i>
+    </div>
+    <p class="mt-3 mb-0">© 2050 - Site criado para fins educacionais com a ajuda da <strong>ALURA</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'982789605576f1bb',t:'MTc1ODQzNjQ2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
