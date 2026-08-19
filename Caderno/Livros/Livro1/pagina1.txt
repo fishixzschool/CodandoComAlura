@@ -1,0 +1,10 @@
+## Checklist rápido
+
+1- Abriu o link do Google Colab.
+( Feito )
+
+2- Salvou uma cópia no Drive.
+( Feito )
+
+3- Renomeou o arquivo com o nome da equipe.
+( Feito )
